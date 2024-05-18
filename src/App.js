@@ -8,6 +8,10 @@ function App() {
         setEmail(event.target.value);
     }
 
+    // function handleClick(){
+    //     alert(email);
+    // }
+
     let message = <div>Ale masz krótki adres!</div>
     if (email.length > 15) {
         message = <div>Twój adres jest stanowczo za długi!</div>;
@@ -21,14 +25,12 @@ function App() {
         <h1>System do zapisów na zajęcia</h1>
           <h2>Twój e-mail to {email}</h2>
           {message}
-          <input value={email} type="text" onChange={handleChange}/>
+          <input value={email} type="text" onChange={handleChange} className="longfield"/>
+          <button onClick={() => alert(email)}> Wyświetl mój e-mail w alercie</button>
+
       </div>
 
   );
 
 }
-
-// "Ale masz krótki adres!"
-// "Twój adres jest git"
-// "Twój adres jest stanowczo za długi"
 export default App;
